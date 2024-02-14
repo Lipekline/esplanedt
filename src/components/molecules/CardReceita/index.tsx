@@ -1,5 +1,4 @@
 import React from 'react';
-import {StyleSheet} from 'react-native';
 
 import {
   Container,
@@ -12,38 +11,32 @@ import {
 } from './styles';
 import {Spacer} from '../../atoms/Spacer';
 
-interface ICardReceitaProps {}
+interface ICardReceitaProps {
+  title: string;
+  imageUrl: string;
+  serve: number;
+  tempo: number;
+}
 
-const CardReceita: React.FC<ICardReceitaProps> = () => {
+const CardReceita: React.FC<ICardReceitaProps> = ({
+  title,
+  imageUrl,
+  serve,
+  tempo,
+}) => {
   return (
-    <Container style={styles.container}>
-      <ContainerFoto
-        source={require('../../../assets/images/imagem-comida.jpg')}
-      />
+    <Container>
+      <ContainerFoto source={{uri: imageUrl}} />
       <Spacer horizontal={8} />
       <ContainerInfo>
-        <Title>17 Bean White Chicken Chili</Title>
+        <Title>{title}</Title>
         <ContainerIcons>
-          <SubtitleServe>Serve: 4 pessoas</SubtitleServe>
-          <Subtitle>Tempo: 45 minutos</Subtitle>
+          <SubtitleServe>Porções: {serve} unidades</SubtitleServe>
+          <Subtitle>Tempo: {tempo} minutos</Subtitle>
         </ContainerIcons>
       </ContainerInfo>
     </Container>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 6,
-    },
-    shadowOpacity: 0.05,
-    shadowRadius: 8.3,
-
-    elevation: 10,
-  },
-});
 
 export default CardReceita;

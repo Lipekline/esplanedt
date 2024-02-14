@@ -6,8 +6,9 @@ export const Container = styled.View`
   background-color: #f6f6f6;
   border-radius: 15px;
   padding: 20px;
-  margin-top: 20px;
+  margin-top: 30px;
   flex-direction: row;
+  border: 2px solid #d6d4d4;
 `;
 
 export const ContainerFoto = styled.Image`
