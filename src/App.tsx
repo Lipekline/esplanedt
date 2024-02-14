@@ -1,12 +1,8 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import Onboarding from './screens/onboarding';
 
 const App = () => {
-  return (
-    <View>
-      <Text>App esplane</Text>
-    </View>
-  );
+  return <Onboarding />;
 };
 
 export default App;
