@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import {Colors} from '../../styles/colors';
 
 export const Container = styled.View`
   background-color: #fff;
@@ -18,13 +19,13 @@ export const ImageOnboarding = styled.Image`
 `;
 
 export const Header = styled.Text`
-  color: #2e3e5c;
+  color: ${Colors.secondary};
   font-size: 24px;
   font-weight: bold;
 `;
 
 export const Subheader = styled.Text`
-  color: #9fa5c0;
+  color: ${Colors.tertiary};
   font-size: 18px;
   font-weight: bold;
   text-align: center;

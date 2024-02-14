@@ -8,8 +8,9 @@ import {
   Subheader,
 } from './styles';
 import {Spacer} from '../../components/atoms/Spacer';
-import Botao from '../../components/Botao';
+import Botao from '../../components/atoms/Botao';
 import {useNavigation} from '@react-navigation/native';
+import {Colors} from '../../styles/colors';
 
 interface IOnboardingProps {}
 
@@ -30,7 +31,7 @@ const Onboarding: React.FC<IOnboardingProps> = () => {
         <Subheader> para cozinhar melhor</Subheader>
         <Spacer vertical={48} />
         <Botao
-          color="#1FCC79"
+          color={Colors.primary}
           textColor="#fff"
           text="Ver Receitas"
           onPress={() => navigate('Home')}
