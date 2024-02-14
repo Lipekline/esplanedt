@@ -1,8 +1,8 @@
 import React from 'react';
-import Onboarding from './screens/onboarding';
+import AppRoutes from './routes';
 
 const App = () => {
-  return <Onboarding />;
+  return <AppRoutes />;
 };
 
 export default App;

@@ -9,10 +9,12 @@ import {
 } from './styles';
 import {Spacer} from '../../components/atoms/Spacer';
 import Botao from '../../components/Botao';
+import {useNavigation} from '@react-navigation/native';
 
 interface IOnboardingProps {}
 
 const Onboarding: React.FC<IOnboardingProps> = () => {
+  const {navigate} = useNavigation();
   return (
     <>
       <Container>
@@ -27,7 +29,12 @@ const Onboarding: React.FC<IOnboardingProps> = () => {
         <Subheader>Receitas fáceis e práticas </Subheader>
         <Subheader> para cozinhar melhor</Subheader>
         <Spacer vertical={48} />
-        <Botao color="#1FCC79" textColor="#fff" text="Ver Receitas" />
+        <Botao
+          color="#1FCC79"
+          textColor="#fff"
+          text="Ver Receitas"
+          onPress={() => navigate('Home')}
+        />
       </ContainerBody>
     </>
   );
