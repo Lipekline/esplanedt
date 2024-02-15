@@ -24,7 +24,7 @@ export interface IReceitasDetalhes {
 export const ReceitasService = () => {
   return {
     listagem: () => {
-      return api.get<IReceitas>(`/random?number=10&apiKey=${API_KEY}`);
+      return api.get<IReceitas>(`/random?number=100&apiKey=${API_KEY}`);
     },
     detalhes: (id: number) => {
       return api.get<IReceitasDetalhes>(`/${id}/information?apiKey=${API_KEY}`);
