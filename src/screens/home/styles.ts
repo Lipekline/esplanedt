@@ -4,6 +4,7 @@ import {Colors} from '../../styles/colors';
 export const Container = styled.View`
   padding: 0px 20px;
   background-color: ${Colors.white};
+  flex: 1;
 `;
 
 export const HeaderContainer = styled.View`
