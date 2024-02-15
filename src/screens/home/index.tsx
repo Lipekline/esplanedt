@@ -6,11 +6,13 @@ import BarraDeBusca from '../../components/atoms/BarraDeBusca';
 import CardReceita from '../../components/molecules/CardReceita';
 import {IReceitasCard, ReceitasService} from '../../services/ReceitasService';
 import {FlatList} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 
 interface IHomeProps {}
 
 const Home: React.FC<IHomeProps> = () => {
   const [listagemReceitas, setListagemReceitas] = useState<IReceitasCard[]>();
+  const {navigate} = useNavigation();
 
   useEffect(() => {
     async function getListagemReceitas() {
@@ -44,6 +46,7 @@ const Home: React.FC<IHomeProps> = () => {
             title={item.title}
             tempo={item.readyInMinutes}
             serve={item.servings}
+            onPress={() => navigate('Detalhes', item.id)}
           />
         )}
       />
