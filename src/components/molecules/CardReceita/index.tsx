@@ -16,6 +16,7 @@ interface ICardReceitaProps {
   imageUrl: string;
   serve: number;
   tempo: number;
+  onPress?: () => void;
 }
 
 const CardReceita: React.FC<ICardReceitaProps> = ({
@@ -23,9 +24,10 @@ const CardReceita: React.FC<ICardReceitaProps> = ({
   imageUrl,
   serve,
   tempo,
+  onPress,
 }) => {
   return (
-    <Container>
+    <Container onPress={onPress}>
       <ContainerFoto source={{uri: imageUrl}} />
       <Spacer horizontal={8} />
       <ContainerInfo>

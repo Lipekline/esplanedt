@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 import {Colors} from '../../../styles/colors';
 
-export const Container = styled.View`
+export const Container = styled.Pressable`
   width: 100%;
   background-color: #f6f6f6;
   border-radius: 15px;
