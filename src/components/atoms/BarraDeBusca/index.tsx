@@ -15,6 +15,7 @@ const BarraDeBusca: React.FC<IBarraDeBuscaProps> = ({onChangeText, value}) => {
         onChangeText={onChangeText}
         value={value}
         placeholder="Procure sua receita..."
+        placeholderTextColor="#97a2b0"
       />
     </Container>
   );

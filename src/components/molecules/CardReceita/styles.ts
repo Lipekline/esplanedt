@@ -17,6 +17,13 @@ export const ContainerFoto = styled.Image`
   border-radius: 15px;
 `;
 
+export const ContainerSemFoto = styled.Image`
+  width: 90px;
+  height: 90px;
+  border-radius: 15px;
+  border: 1px solid #d6d4d4;
+`;
+
 export const ContainerInfo = styled.View`
   flex: 1;
 `;

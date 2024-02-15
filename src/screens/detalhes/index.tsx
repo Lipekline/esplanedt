@@ -50,10 +50,10 @@ const Detalhes: React.FC<IDetalhesProps> = () => {
   const {width} = useWindowDimensions();
 
   const Summary = {
-    html: `${detalhesReceitas?.summary}`,
+    html: `<p>${detalhesReceitas?.summary}<p>`,
   };
   const Instructions = {
-    html: `${detalhesReceitas?.instructions}`,
+    html: `<p>${detalhesReceitas?.instructions}<p>`,
   };
 
   return (
@@ -78,13 +78,29 @@ const Detalhes: React.FC<IDetalhesProps> = () => {
             <ContainerInstrucao>
               <Title>Resumo</Title>
               <Spacer vertical={8} />
-              <RenderHTML contentWidth={width} source={Summary} />
+              <RenderHTML
+                tagsStyles={{
+                  b: {color: '#58585A'},
+                  p: {color: '#58585A'},
+                  li: {color: '#58585A'},
+                }}
+                contentWidth={width}
+                source={Summary}
+              />
             </ContainerInstrucao>
             <Separator />
             <ContainerInstrucao>
               <Title>Instruções</Title>
               <Spacer vertical={8} />
-              <RenderHTML contentWidth={width} source={Instructions} />
+              <RenderHTML
+                tagsStyles={{
+                  b: {color: '#58585A'},
+                  p: {color: '#58585A'},
+                  li: {color: '#58585A'},
+                }}
+                contentWidth={width}
+                source={Instructions}
+              />
             </ContainerInstrucao>
           </>
         ) : (

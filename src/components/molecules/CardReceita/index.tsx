@@ -28,7 +28,7 @@ const CardReceita: React.FC<ICardReceitaProps> = ({
 }) => {
   return (
     <Container onPress={onPress}>
-      <ContainerFoto source={{uri: imageUrl}} />
+      {imageUrl && <ContainerFoto source={{uri: imageUrl}} />}
       <Spacer horizontal={8} />
       <ContainerInfo>
         <Title>{title}</Title>
