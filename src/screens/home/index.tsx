@@ -46,7 +46,7 @@ const Home: React.FC<IHomeProps> = () => {
             title={item.title}
             tempo={item.readyInMinutes}
             serve={item.servings}
-            onPress={() => navigate('Detalhes', item.id)}
+            onPress={() => navigate('Detalhes', {id: item.id})}
           />
         )}
       />
