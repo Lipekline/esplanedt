@@ -19,6 +19,7 @@ import {
 } from '../../services/ReceitasService';
 import {Spacer} from '../../components/atoms/Spacer';
 import RenderHTML from 'react-native-render-html';
+import DetalhesSkeleton from '../../components/skeletons/detalhes-skeleton';
 
 interface IDetalhesProps {}
 
@@ -58,29 +59,37 @@ const Detalhes: React.FC<IDetalhesProps> = () => {
   return (
     <ScrollView>
       <Container>
-        <ContainerImage>
-          <ImageReceita source={{uri: detalhesReceitas?.image}} />
-        </ContainerImage>
-        <Spacer vertical={30} />
-        <Title>{detalhesReceitas?.title}</Title>
-        <ContainerInfo>
-          <Subtitle>Tempo: {detalhesReceitas?.readyInMinutes} minutos</Subtitle>
-          <SubtitleServe>
-            Porções: {detalhesReceitas?.servings} unidades
-          </SubtitleServe>
-        </ContainerInfo>
-        <Separator />
-        <ContainerInstrucao>
-          <Title>Resumo</Title>
-          <Spacer vertical={8} />
-          <RenderHTML contentWidth={width} source={Summary} />
-        </ContainerInstrucao>
-        <Separator />
-        <ContainerInstrucao>
-          <Title>Instruções</Title>
-          <Spacer vertical={8} />
-          <RenderHTML contentWidth={width} source={Instructions} />
-        </ContainerInstrucao>
+        {detalhesReceitas ? (
+          <>
+            <ContainerImage>
+              <ImageReceita source={{uri: detalhesReceitas?.image}} />
+            </ContainerImage>
+            <Spacer vertical={30} />
+            <Title>{detalhesReceitas?.title}</Title>
+            <ContainerInfo>
+              <Subtitle>
+                Tempo: {detalhesReceitas?.readyInMinutes} minutos
+              </Subtitle>
+              <SubtitleServe>
+                Porções: {detalhesReceitas?.servings} unidades
+              </SubtitleServe>
+            </ContainerInfo>
+            <Separator />
+            <ContainerInstrucao>
+              <Title>Resumo</Title>
+              <Spacer vertical={8} />
+              <RenderHTML contentWidth={width} source={Summary} />
+            </ContainerInstrucao>
+            <Separator />
+            <ContainerInstrucao>
+              <Title>Instruções</Title>
+              <Spacer vertical={8} />
+              <RenderHTML contentWidth={width} source={Instructions} />
+            </ContainerInstrucao>
+          </>
+        ) : (
+          <DetalhesSkeleton />
+        )}
       </Container>
       <Spacer vertical={50} />
     </ScrollView>
